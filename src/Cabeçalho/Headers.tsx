@@ -60,6 +60,7 @@ function DashUser() {
                   </>
                 );
               })}
+
               <SpanTotalSale>
                 <TotalName>Total</TotalName>
                 <TotalPrice>R$ {CarrrinhoTotal.toFixed(2)}</TotalPrice>
