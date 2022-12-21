@@ -35,7 +35,7 @@ export const UserProvider = ({ children }: iUserContextProps) => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState<IProducts>();
 
-  const submitFormRegister = async (data: iData) => {
+  async function submitFormRegister(data: iData) {
     try {
       const response = await Api.post("/users", data);
       toast.success("Conta criada com sucesso!");
@@ -44,14 +44,15 @@ export const UserProvider = ({ children }: iUserContextProps) => {
       console.log(error);
       toast.error("Ops! Algo deu errado");
     }
-  };
+  }
 
   useEffect(() => {
-    const autoLogin = async () => {
+    async function autoLogin() {
       const token = localStorage.getItem("@TOKEN");
 
       if (!token) {
         setLoading(false);
+        navigate("/login");
         return null;
       }
       try {
@@ -61,31 +62,34 @@ export const UserProvider = ({ children }: iUserContextProps) => {
           },
         });
         setProducts(response.data);
-        console.log(products);
+
         setUserLogin(true);
         navigate("/dashboard");
       } catch (error) {
         console.log(error);
-        localStorage.clear();
+        navigate("/login");
       } finally {
         setLoading(false);
       }
-    };
+    }
+
     autoLogin();
-  }, []);
-  const submitFormLogin = async (data: iData) => {
+  }, [navigate]);
+  async function submitFormLogin(data: iData) {
     try {
       const response = await Api.post("/login", data);
       const { accessToken } = response.data;
       setUserLogin(true);
       localStorage.setItem("@TOKEN", accessToken);
       toast.success("Login efetuado com sucesso!");
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 4000);
     } catch (error) {
       console.log(error);
       toast.error("Email ou senha incorretos!");
     }
-  };
+  }
   return (
     <UserContext.Provider
       value={{

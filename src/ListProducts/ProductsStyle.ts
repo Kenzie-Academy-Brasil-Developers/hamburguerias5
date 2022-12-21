@@ -2,14 +2,15 @@ import styled from "styled-components";
 export const DivProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
-  gap: 4rem;
+  width: 90%;
+  gap: 6rem;
   align-items: center;
   justify-content: center;
+  margin-top: 2%;
 `;
 export const UlProducts = styled.ul`
-  width: 22%;
-  height: 19rem;
+  width: 20%;
+  height: 22rem;
   border: 2px solid #e0e0e0;
 `;
 export const AllImg = styled.img`
@@ -25,7 +26,9 @@ export const FigureaAll = styled.figure`
 export const DivNameIsPrice = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 11px;
+
+  gap: 10px;
+  padding: 1rem;
 `;
 export const NameItem = styled.p`
   font-family: "Inter", sans-serif;

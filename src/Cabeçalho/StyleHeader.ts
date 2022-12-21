@@ -42,19 +42,21 @@ export const ButtonSale = styled.button`
   height: 88%;
   font-size: 2rem;
   width: 14%;
-  /* left: 1409px; */
   top: 27px;
   border-radius: nullpx;
   border: none;
+  cursor: pointer;
+  background-color: #f5f5f5;
 `;
 export const BtnLogoutHeader = styled.button`
   height: 88%;
   font-size: 2rem;
   width: 14%;
-  /* left: 1409px; */
   top: 27px;
   border-radius: nullpx;
   border: none;
+  cursor: pointer;
+  background-color: #f5f5f5;
 `;
 export const ImgSale = styled.img`
   width: 6rem;
@@ -108,6 +110,7 @@ export const BtnRemoveSale = styled.button`
 height: 13px
 width: 11px;
 border:none;
-background-color:#f5f5f5;
+background-color: white;
+cursor:pointer
 
 `;

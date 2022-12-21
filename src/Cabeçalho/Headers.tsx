@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BiSearch } from "react-icons/bi";
-import { BsBagCheck, BsTrash } from "react-icons/bs";
+import { BsCartCheck, BsTrash } from "react-icons/bs";
 import { RxExit } from "react-icons/rx";
 
 import Logo from "../assets/img/logo.(1)svg.svg";
@@ -81,7 +81,7 @@ function DashUser() {
           </BtnSearch>
 
           <ButtonSale onClick={() => setModalOpen(true)}>
-            <BsBagCheck />
+            <BsCartCheck />
           </ButtonSale>
           <BtnLogoutHeader onClick={() => logout()}>
             <RxExit />

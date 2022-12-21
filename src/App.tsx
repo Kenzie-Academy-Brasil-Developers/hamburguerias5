@@ -9,7 +9,7 @@ function App() {
     <>
       <CardProvider>
         <UserProvider>
-          <Routerss />;
+          <Routerss />
         </UserProvider>
       </CardProvider>
       <ToastContainer

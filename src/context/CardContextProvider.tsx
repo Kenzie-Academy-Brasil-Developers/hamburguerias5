@@ -57,23 +57,22 @@ export const CardProvider = ({ children }: iUserContextProps) => {
       setModalOpen(false);
     }, 600);
   }
-  useEffect(() => {
-    async function getProducts() {
-      const token = localStorage.getItem("@TOKEN");
+  async function getProducts() {
+    const token = localStorage.getItem("@TOKEN");
 
-      try {
-        const response = await Api.get("/products", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
-        setProducts(response.data);
-      } catch (error) {
-        console.log(error);
-      }
+    try {
+      const response = await Api.get("/products", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      setProducts(response.data);
+    } catch (error) {
+      console.log(error);
     }
-    getProducts();
-  }, []);
+  }
+  getProducts();
+  useEffect(() => {}, [products]);
 
   function searchInput(inputValue: string) {
     const productsFilter = products.filter((element) => {
@@ -101,7 +100,6 @@ export const CardProvider = ({ children }: iUserContextProps) => {
       if (element.id === productId) {
         console.log(element);
         toast.success(" O produto adicionado com sucesso!");
-
         return element;
       }
     });

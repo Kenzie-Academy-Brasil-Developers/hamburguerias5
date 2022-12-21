@@ -26,4 +26,5 @@ export const BtnClose = styled.button`
   border: none;
   background-color: rgba(39, 174, 96, 1);
   color: #f5f5f5;
+  cursor: pointer;
 `;
