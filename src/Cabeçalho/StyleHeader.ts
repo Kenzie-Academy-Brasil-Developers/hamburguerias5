@@ -1,20 +1,18 @@
 import styled from "styled-components";
 export const Header = styled.header`
   display: flex;
-  // justify-content: space-between;
-  gap: 50%;
-  padding: 1%;
+  gap: 48vw;
+  padding: 1vw;
   width: 100vw;
-  height: 70px;
+  height: 5vw;
   background-color: #f5f5f5;
 `;
 export const ImgLogo = styled.img`
-  width: 13%;
+  width: 14vw;
 `;
 export const InputSearch = styled.input`
-  height: 45px;
-  width: 18rem;
-
+  height: 3vw;
+  width: 18vw;
   border-radius: 8px;
   padding: 0px 10px 0px 15px;
   border-color: rgba(224, 224, 224, 1);
@@ -22,7 +20,7 @@ export const InputSearch = styled.input`
 export const BtnSearch = styled.button`
   height: 40px;
   width: 53px;
-  left: 302px;
+  left: 261px;
   top: 10px;
   border-radius: 8px;
   margin: 0rem 0rem 0rem 58.5%;

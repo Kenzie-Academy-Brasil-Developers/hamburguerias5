@@ -2,20 +2,20 @@ import styled from "styled-components";
 export const DivProducts = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 90vw;
   gap: 6rem;
   align-items: center;
   justify-content: center;
-  margin-top: 2%;
+  margin-top: 2vw;
 `;
 export const UlProducts = styled.ul`
-  width: 20%;
-  height: 22rem;
+  width: 20vw;
+  height: 24vw;
   border: 2px solid #e0e0e0;
 `;
 export const AllImg = styled.img`
-  height: 162px;
-  width: 162px;
+  height: 11vw;
+  width: 11vw;
 `;
 export const FigureaAll = styled.figure`
   display: flex;

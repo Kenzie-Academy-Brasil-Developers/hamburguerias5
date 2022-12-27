@@ -50,10 +50,20 @@ export const UserProvider = ({ children }: iUserContextProps) => {
     async function autoLogin() {
       const token = localStorage.getItem("@TOKEN");
 
-      if (!token) {
-        setLoading(false);
-        navigate("/login");
-        return null;
+      let redirecting = false;
+
+      if (
+        window.location.pathname !== "/login" &&
+        window.location.pathname !== "/cadastro"
+      ) {
+        if (!localStorage.getItem("@TOKEN")) {
+          if (!redirecting) {
+            redirecting = true;
+            navigate("/login");
+          }
+        }
+      } else {
+        redirecting = false;
       }
       try {
         const response = await Api.get("/products", {
@@ -74,7 +84,7 @@ export const UserProvider = ({ children }: iUserContextProps) => {
     }
 
     autoLogin();
-  }, [navigate]);
+  }, [products]);
   async function submitFormLogin(data: iData) {
     try {
       const response = await Api.post("/login", data);
