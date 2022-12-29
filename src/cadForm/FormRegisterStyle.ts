@@ -4,6 +4,11 @@ export const AllInput = styled.input`
   height: 40px;
   width: 350px;
   border-radius: 8px;
+  &:hover {
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #ff0000, #000);
+    border-image-slice: 1;
+  }
 `;
 export const DivRegister = styled.div`
   display: flex;
@@ -28,7 +33,7 @@ export const SpanRegister = styled.span`
 export const FormularioRegister = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 `;
 export const BtnRegister = styled.button`
   height: 40px;
@@ -41,7 +46,12 @@ export const BtnRegister = styled.button`
   font-weight: 600;
   line-height: 28px;
   color: #828282;
+  cursor: pointer;
   border-color: #f5f5f5;
+  &:hover {
+    background: #219653;
+    color: #f5f5f5;
+  }
 `;
 export const SectionRegisterForm = styled.section`
   border: 2px solid #f5f5f5;
@@ -65,7 +75,7 @@ export const LabelEmail = styled.label`
   font-weight: 400;
   line-height: 15px;
   color: rgba(153, 153, 153, 1);
-  margin: 5rem 0rem 0rem 8px;
+  margin: 4rem 0rem 0rem 8px;
   position: absolute;
   background-color: white;
   width: 3%;
@@ -76,4 +86,10 @@ export const NavLink = styled(Link)`
   font-weight: 500;
   line-height: 22px;
   color: #828282;
+`;
+export const ErrorP = styled.p`
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #ff0000;
+  margin: -1rem 0rem 0rem 0rem;
 `;

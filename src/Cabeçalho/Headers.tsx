@@ -17,6 +17,7 @@ import {
   ImgSale,
   InputSearch,
   LiProductSale,
+  MessageSale,
   NameProdctCarrinho,
   SpanHeaderReg,
   SpanNameRemove,
@@ -43,28 +44,33 @@ function DashUser() {
           <BtnCloseModal />
           <div>
             <DivModal>
-              {SaleArray.map((produto) => {
-                return (
-                  <>
-                    <LiProductSale>
-                      <ImgSale src={produto.img} alt={produto.name} />
-                      <SpanNameRemove>
-                        <NameProdctCarrinho>{produto.name} </NameProdctCarrinho>
-                        <BtnRemoveSale
-                          onClick={() => removeprodutoSale(produto.id)}
-                        >
-                          <BsTrash />
-                        </BtnRemoveSale>
-                      </SpanNameRemove>
-                    </LiProductSale>
-                  </>
-                );
-              })}
-
-              <SpanTotalSale>
-                <TotalName>Total</TotalName>
-                <TotalPrice>R$ {CarrrinhoTotal.toFixed(2)}</TotalPrice>
-              </SpanTotalSale>
+              {SaleArray.length > 0 ? (
+                SaleArray.map((produto) => {
+                  return (
+                    <>
+                      <LiProductSale>
+                        <ImgSale src={produto.img} alt={produto.name} />
+                        <SpanNameRemove>
+                          <NameProdctCarrinho>
+                            {produto.name}{" "}
+                          </NameProdctCarrinho>
+                          <BtnRemoveSale
+                            onClick={() => removeprodutoSale(produto.id)}
+                          >
+                            <BsTrash />
+                          </BtnRemoveSale>
+                        </SpanNameRemove>
+                      </LiProductSale>
+                      <SpanTotalSale>
+                        <TotalName>Total</TotalName>
+                        <TotalPrice>R$ {CarrrinhoTotal.toFixed(2)}</TotalPrice>
+                      </SpanTotalSale>
+                    </>
+                  );
+                })
+              ) : (
+                <MessageSale>Não há produtos no carrinho</MessageSale>
+              )}
             </DivModal>
           </div>
         </>

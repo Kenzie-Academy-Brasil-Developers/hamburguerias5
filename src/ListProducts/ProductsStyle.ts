@@ -27,12 +27,13 @@ export const DivNameIsPrice = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
-  padding: 1rem;
+  gap: 1.5vw;
+  padding: 0.5vw;
 `;
 export const NameItem = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 18px;
+  font-size: 1.25vw;
+
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0em;
@@ -41,21 +42,21 @@ export const NameItem = styled.p`
 `;
 export const CategoryItem = styled.h5`
   font-family: "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 0.9vw;
   font-weight: 400;
   line-height: 16px;
   color: #828282;
 `;
 export const PriceItem = styled.p`
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 1.3vw;
   font-weight: 600;
   line-height: 24px;
   color: rgba(39, 174, 96, 1);
 `;
 export const BtnAddCarrinho = styled.button`
-  height: 40px;
-  width: 106px;
+  height: 3vw;
+  width: 8vw;
   left: 20px;
   top: 133px;
   border-radius: 8px;
@@ -64,10 +65,18 @@ export const BtnAddCarrinho = styled.button`
   border-color: rgba(39, 174, 96, 1);
   cursor: pointer;
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 0.9vw;
   font-weight: 600;
   line-height: 17px;
   letter-spacing: 0em;
-  text-align: left;
+  text-align: center;
   color: rgba(255, 255, 255, 1);
+`;
+export const DivSecund = styled.div`
+  width: 70vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  gap: 5vw;
 `;

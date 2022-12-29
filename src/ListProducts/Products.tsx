@@ -6,6 +6,7 @@ import {
   CategoryItem,
   DivNameIsPrice,
   DivProducts,
+  DivSecund,
   FigureaAll,
   NameItem,
   PriceItem,
@@ -19,43 +20,45 @@ function ListProducts() {
   console.log(products);
   return (
     <DivProducts>
-      {productsFilter.length !== 0
-        ? productsFilter.map((element) => {
-            const { id, name, category, price, img } = element;
-            return (
-              <UlProducts key={id}>
-                <FigureaAll>
-                  <AllImg src={img} alt={name} />
-                </FigureaAll>
-                <DivNameIsPrice>
-                  <NameItem>{name}</NameItem>
-                  <CategoryItem>{category}</CategoryItem>
-                  <PriceItem>R$ {price.toFixed(2)}</PriceItem>
-                  <BtnAddCarrinho onClick={() => getProductsClick(id)}>
-                    Adicionar
-                  </BtnAddCarrinho>
-                </DivNameIsPrice>
-              </UlProducts>
-            );
-          })
-        : products.map((element) => {
-            const { id, name, category, price, img } = element;
-            return (
-              <UlProducts key={id}>
-                <FigureaAll>
-                  <AllImg src={img} alt={name} />
-                </FigureaAll>
-                <DivNameIsPrice>
-                  <NameItem>{name}</NameItem>
-                  <CategoryItem>{category}</CategoryItem>
-                  <PriceItem>R$ {price.toFixed(2)}</PriceItem>
-                  <BtnAddCarrinho onClick={() => getProductsClick(id)}>
-                    Adicionar
-                  </BtnAddCarrinho>
-                </DivNameIsPrice>
-              </UlProducts>
-            );
-          })}
+      <DivSecund>
+        {productsFilter.length !== 0
+          ? productsFilter.map((element) => {
+              const { id, name, category, price, img } = element;
+              return (
+                <UlProducts key={id}>
+                  <FigureaAll>
+                    <AllImg src={img} alt={name} />
+                  </FigureaAll>
+                  <DivNameIsPrice>
+                    <NameItem>{name}</NameItem>
+                    <CategoryItem>{category}</CategoryItem>
+                    <PriceItem>R$ {price.toFixed(2)}</PriceItem>
+                    <BtnAddCarrinho onClick={() => getProductsClick(id)}>
+                      Adicionar
+                    </BtnAddCarrinho>
+                  </DivNameIsPrice>
+                </UlProducts>
+              );
+            })
+          : products.map((element) => {
+              const { id, name, category, price, img } = element;
+              return (
+                <UlProducts key={id}>
+                  <FigureaAll>
+                    <AllImg src={img} alt={name} />
+                  </FigureaAll>
+                  <DivNameIsPrice>
+                    <NameItem>{name}</NameItem>
+                    <CategoryItem>{category}</CategoryItem>
+                    <PriceItem>R$ {price.toFixed(2)}</PriceItem>
+                    <BtnAddCarrinho onClick={() => getProductsClick(id)}>
+                      Adicionar
+                    </BtnAddCarrinho>
+                  </DivNameIsPrice>
+                </UlProducts>
+              );
+            })}
+      </DivSecund>
     </DivProducts>
   );
 }

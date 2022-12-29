@@ -112,3 +112,11 @@ background-color: white;
 cursor:pointer
 
 `;
+export const MessageSale = styled.p`
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 2vw;
+`;

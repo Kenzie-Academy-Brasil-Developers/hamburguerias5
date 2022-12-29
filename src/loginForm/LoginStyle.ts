@@ -27,6 +27,11 @@ export const AllInput = styled.input`
   height: 40px;
   width: 350px;
   border-radius: 8px;
+  &:hover {
+    border: 2px solid transparent;
+    border-image: linear-gradient(to right, #ff0000, #000);
+    border-image-slice: 1;
+  }
 `;
 export const TitleForm = styled.p`
   font-family: "Inter", sans-serif;
@@ -74,6 +79,10 @@ export const BtnRegister = styled.button`
   color: #999999;
   cursor: pointer;
   border-color: #f5f5f5;
+  &:hover {
+    background: #219653;
+    color: #f5f5f5;
+  }
 `;
 export const LabelEmail = styled.label`
   font-family: Inter;

@@ -9,6 +9,7 @@ import {
   AllInput,
   BtnRegister,
   DivRegister,
+  ErrorP,
   FormularioRegister,
   LabelEmail,
   LabelName,
@@ -35,12 +36,20 @@ function FormRegi() {
   const { submitFormRegister } = useContext(UserContext);
   const [user, setUser] = useState<Iuser>();
 
+  const regex = new RegExp(
+    "^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$"
+  );
+
   const formSchema = yup.object().shape({
     name: yup.string().required("Nome obrigatório"),
     email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
     password: yup
       .string()
-      .required("digite sua senha com 8 digitos e um caractere especial "),
+      .required("digite sua senha com 8 digitos e um caractere especial ")
+      .matches(
+        regex,
+        "Sua senha deve conter uma leta Maiusculo , uma minuscula um caracter especial, alem de ter no minimo 8 digitos exemplo: Br@sil2012 "
+      ),
     confirmPassword: yup
       .string()
       .required("os campos de senha deve ser iguais")
@@ -74,20 +83,44 @@ function FormRegi() {
             placeholder="digite seu nome"
             {...register("name")}
           />
+          <ErrorP>
+            {errors.name &&
+              errors.name.message &&
+              errors.name.message.toString()}
+          </ErrorP>
           <LabelEmail htmlFor="email">Email</LabelEmail>
           <AllInput type="text" placeholder="Email" {...register("email")} />
-
+          <ErrorP>
+            {errors.name &&
+              errors.name.message &&
+              errors.email &&
+              errors.email.message &&
+              errors.email.message.toString()}
+          </ErrorP>
           <AllInput
             type="password"
             placeholder="digite sua senha..."
             {...register("password")}
           />
-
+          <ErrorP>
+            {errors.name &&
+              errors.name.message &&
+              errors.password &&
+              errors.password.message &&
+              errors.password.message.toString()}
+          </ErrorP>
           <AllInput
             placeholder="Confirme Sua senha..."
             type="password"
             {...register("confirmPassword")}
           />
+          <ErrorP>
+            {errors.name &&
+              errors.name.message &&
+              errors.confirmPassword &&
+              errors.confirmPassword.message &&
+              errors.confirmPassword.message.toString()}
+          </ErrorP>
           <BtnRegister onSubmit={handleSubmit(SubmitForm)}>
             Cadastrar
           </BtnRegister>
